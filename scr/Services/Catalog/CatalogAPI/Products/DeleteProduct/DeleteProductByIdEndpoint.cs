@@ -1,5 +1,4 @@
-﻿
-namespace CatalogAPI.Products.DeleteProduct
+﻿namespace CatalogAPI.Products.DeleteProduct
 {
     //public record GettProductsRequest()
     public record DeleteProductResponse(bool IsSuccess);
@@ -9,7 +8,7 @@ namespace CatalogAPI.Products.DeleteProduct
         {
             app.MapDelete("/products/{id}", async (Guid id, ISender sender) =>
             {
-                var result = await sender.Send(new DeleteProductCommmand(id));
+                var result = await sender.Send(new DeleteProductCommand(id));
 
                 var response = result.Adapt<DeleteProductResponse>();
 
