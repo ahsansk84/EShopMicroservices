@@ -1,7 +1,6 @@
 ﻿namespace Basket.API.Basket.DeleteBasket
 {
     public record DeleteBasketCommand(string UserName) : IQuery<DeleteBasketResult>;
-
     public record DeleteBasketResult(bool IsSuccess);
 
     public class DeleteBasketCommandValidator : AbstractValidator<DeleteBasketCommand>
@@ -11,13 +10,14 @@
             RuleFor(x => x.UserName).NotEmpty().WithMessage("User Name is required");
         }
     }
-    internal class DeleteBasketCommmandHandler(IDocumentSession session)
+
+    internal class DeleteBasketCommmandHandler(IBasketRepository repository)
         : IQueryHandler<DeleteBasketCommand, DeleteBasketResult>
     {
         public async Task<DeleteBasketResult> Handle(DeleteBasketCommand commmand, CancellationToken cancellationToken)
         {
-            session.Delete<ShoppingCart>(commmand.UserName);
-            await session.SaveChangesAsync(cancellationToken);
+            //TODO
+            await repository.DeleteBasket(commmand.UserName,cancellationToken);
 
             return new DeleteBasketResult(true);
         }

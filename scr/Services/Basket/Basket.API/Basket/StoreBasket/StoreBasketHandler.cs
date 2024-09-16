@@ -2,7 +2,7 @@
 {
     public record StoreBasketCommand(ShoppingCart Cart)
         :ICommand<StoreBasketResult>;
-    public record StoreBasketResult(bool isSuccess);
+    public record StoreBasketResult(string UserName);
 
     public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>
     {
@@ -16,7 +16,7 @@
         }
     }
 
-    internal class StoreBasketCommandHandler(IDocumentSession session)
+    internal class StoreBasketCommandHandler(IBasketRepository repository)
         : ICommandHandler<StoreBasketCommand, StoreBasketResult>
     {
         public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
@@ -25,23 +25,15 @@
             //save to database
             //return StoreBasketResult result
 
-            var cart = new ShoppingCart
-            {
-                UserName = command.Cart.UserName,
-                Items = command.Cart.Items
-            };
+            ShoppingCart cart = command.Cart;
 
             //TODO
             //save to databas
-            if (cart != null && session != null)
-            {
-                session.Store(cart);
-                await session.SaveChangesAsync(cancellationToken);
-            }
+            await repository.StoreBasket(cart, cancellationToken);
 
             //return result
 
-            return new StoreBasketResult(true);
+            return new StoreBasketResult(command.Cart.UserName);
 
         }
     }
