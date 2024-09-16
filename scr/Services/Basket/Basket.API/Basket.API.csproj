@@ -7,6 +7,7 @@
     <UserSecretsId>2185f129-535e-4bf2-a133-9e2cffffe056</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Basket\CheckoutBasket\" />
-    <Folder Include="Data\" />
     <Folder Include="Dtos\" />
     <Folder Include="GrpcServices\" />
   </ItemGroup>
