@@ -4,7 +4,7 @@ services:
   catalogdb:
     image: postgres
     build:
-      dockerfile: Services/Catalog/CatalogAPI/Dockerfile
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
   basketdb:
     image: postgres
     build:
@@ -18,7 +18,7 @@ services:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
       context: .
-      dockerfile: Services/Catalog/CatalogAPI/Dockerfile
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
 
   basket.api:
     image: ${DOCKER_REGISTRY-}basketapi

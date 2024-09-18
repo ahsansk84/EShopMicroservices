@@ -1,5 +1,5 @@
 ﻿
-namespace CatalogAPI.Products.GetProductByCategory
+namespace Catalog.API.Products.GetProductByCategory
 {
     //public record GettProductsRequest()
     public record GetProductByCategoryResponse(IEnumerable<Product> Products);
