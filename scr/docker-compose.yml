@@ -9,6 +9,10 @@ services:
     image: postgres
     build:
       dockerfile: Services/Basket/Basket.API/Dockerfile
+  distributedcache:
+    image: redis
+    build:
+      dockerfile: Services/Basket/Basket.API/Dockerfile
   
   catalogapi:
     image: ${DOCKER_REGISTRY-}catalogapi
