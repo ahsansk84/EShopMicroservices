@@ -1,4 +1,6 @@
-﻿namespace Basket.API.Basket.StoreBasket
+﻿using Discount.Grpc;
+
+namespace Basket.API.Basket.StoreBasket
 {
     public record StoreBasketCommand(ShoppingCart Cart)
         :ICommand<StoreBasketResult>;
@@ -16,24 +18,34 @@
         }
     }
 
-    internal class StoreBasketCommandHandler(IBasketRepository repository)
+    internal class StoreBasketCommandHandler
+        (IBasketRepository repository, DiscountProtoService.DiscountProtoServiceClient discountProto)
         : ICommandHandler<StoreBasketCommand, StoreBasketResult>
     {
         public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
         {
-            //create Poduct entity from command objet
-            //save to database
-            //return StoreBasketResult result
+            //Communnicate with Discount.Grpc and calculate latest price for product
 
-            ShoppingCart cart = command.Cart;
+            await DecuctDiscount(command.Cart, cancellationToken);
 
             //TODO
-            //save to databas
-            await repository.StoreBasket(cart, cancellationToken);
+            //save to databas - use marton upate if exist, if not exist add. 
+            await repository.StoreBasket(command.Cart, cancellationToken);
 
             //return result
 
             return new StoreBasketResult(command.Cart.UserName);
+
+        }
+        private async Task DecuctDiscount(ShoppingCart Cart, CancellationToken cancellationToken)
+        {
+            foreach (var item in Cart.Items)
+            {
+                var coupon = await discountProto.GetDiscountAsync(
+                    new GetDiscountRequest { ProductName = item.ProductName },
+                    cancellationToken : cancellationToken);
+                item.Price -= coupon.Amount;
+            }
 
         }
     }
