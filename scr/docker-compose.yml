@@ -13,6 +13,8 @@ services:
     image: redis
     build:
       dockerfile: Services/Basket/Basket.API/Dockerfile
+  orderdb:
+    image: mcr.microsoft.com/mssql/server
   
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
