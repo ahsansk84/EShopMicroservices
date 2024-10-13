@@ -33,7 +33,7 @@
                     order.Payment.PaymentMethod),
                 Status: order.Status,
                 OrderItems: order.OrderItems.Select(
-                    oi => new OrderItemsDto(
+                    oi => new OrderItemDto(
                         oi.OrderId.Value,
                         oi.ProductId.Value,
                         oi.Quantity,

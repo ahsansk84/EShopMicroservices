@@ -11,7 +11,7 @@ namespace Ordering.Application.Dtos
         AddressDto BullingAddress,
         PaymentDto Payment,
         OrderStatus Status,
-        List<OrderItemsDto> OrderItems
+        List<OrderItemDto> OrderItems
      );
     
 }
