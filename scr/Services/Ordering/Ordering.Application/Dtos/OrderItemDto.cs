@@ -1,6 +1,6 @@
 ﻿namespace Ordering.Application.Dtos
 {
-    public record OrderItemsDto
+    public record OrderItemDto
     (
         Guid OrderId,
         Guid ProductId,

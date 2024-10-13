@@ -18,7 +18,7 @@
 
                 return Results.Created($"/basket/{response.UserName}", response);
             })
-                .WithName("CreateBasket")
+                .WithName("CreateProduct")
                 .Produces<StoreBasketResponse>(StatusCodes.Status201Created)
                 .ProducesProblem(StatusCodes.Status400BadRequest)
                 .WithSummary("Create Product")
