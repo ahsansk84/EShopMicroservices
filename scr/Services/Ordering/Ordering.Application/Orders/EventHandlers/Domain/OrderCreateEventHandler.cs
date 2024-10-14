@@ -12,7 +12,7 @@ namespace Ordering.Application.Orders.EventHandlers.Domain
             logger.LogInformation("Domain Event handler: {DomanEvent}", domainEvent.GetType().Name);
 
             if (await featureManager.IsEnabledAsync("OrderFullfilment"))
-            {
+        {
                 var orderCreateIntegrationEvent = domainEvent.order.ToOrderDto();
                 await publishEndpoint.Publish(orderCreateIntegrationEvent, cancellationToken);
             }
