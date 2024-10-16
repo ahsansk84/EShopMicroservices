@@ -6,7 +6,7 @@
         public Guid CustomerId { get; set; } = default!;
         public decimal TotalPrice { get; set; } = default!;
 
-        //Shipping and Bulling Address
+        //Shipping and Billing Address
         public string LastName { get; set; } = default!;
         public string EmailAddres { get; set; } = default!;
         public string AddressLine { get; set; } = default!;
