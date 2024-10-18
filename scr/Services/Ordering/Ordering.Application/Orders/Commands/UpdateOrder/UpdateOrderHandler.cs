@@ -25,8 +25,8 @@
 
         private void UpdateOrderWithNewValues(Order order, OrderDto orderDto)
         {
-            var shippingAddress = Address.Of(orderDto.ShippingAddress.FirstName, orderDto.ShippingAddress.LastName, orderDto.ShippingAddress.EmailAddres, orderDto.ShippingAddress.AddressLine, orderDto.ShippingAddress.Country, orderDto.ShippingAddress.State, orderDto.ShippingAddress.ZipCode);
-            var billingAddress = Address.Of(orderDto.BullingAddress.FirstName, orderDto.BullingAddress.LastName, orderDto.BullingAddress.EmailAddres, orderDto.BullingAddress.AddressLine, orderDto.BullingAddress.Country, orderDto.BullingAddress.State, orderDto.BullingAddress.ZipCode);
+            var shippingAddress = Address.Of(orderDto.ShippingAddress.FirstName, orderDto.ShippingAddress.LastName, orderDto.ShippingAddress.EmailAddress, orderDto.ShippingAddress.AddressLine, orderDto.ShippingAddress.Country, orderDto.ShippingAddress.State, orderDto.ShippingAddress.ZipCode);
+            var billingAddress = Address.Of(orderDto.BullingAddress.FirstName, orderDto.BullingAddress.LastName, orderDto.BullingAddress.EmailAddress, orderDto.BullingAddress.AddressLine, orderDto.BullingAddress.Country, orderDto.BullingAddress.State, orderDto.BullingAddress.ZipCode);
             var payment = Payment.Of(orderDto.Payment.CardName, orderDto.Payment.CardNumber, orderDto.Payment.Expiration, orderDto.Payment.Cvv, orderDto.Payment.PaymentMethod);
 
             order.Update(

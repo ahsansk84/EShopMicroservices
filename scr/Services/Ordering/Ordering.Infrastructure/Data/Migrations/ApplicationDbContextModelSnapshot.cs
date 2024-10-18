@@ -101,7 +101,7 @@ namespace Ordering.Infrastructure.Data.Migrations
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
 
-                            b1.Property<string>("EmailAddres")
+                            b1.Property<string>("EmailAddress")
                                 .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
@@ -180,7 +180,7 @@ namespace Ordering.Infrastructure.Data.Migrations
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
 
-                            b1.Property<string>("EmailAddres")
+                            b1.Property<string>("EmailAddress")
                                 .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");

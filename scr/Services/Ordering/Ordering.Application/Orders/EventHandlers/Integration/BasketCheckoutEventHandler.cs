@@ -20,7 +20,7 @@ namespace Ordering.Application.Orders.EventHandlers.Integration
 
         private CreateOrderCommand MapToCreateOrderCommannd(BasketCheckoutEvent message)
         {
-            var addressDto = new AddressDto(message.FirstName, message.LastName, message.EmailAddres, message.AddressLine, message.Country, message.State, message.ZipCode);
+            var addressDto = new AddressDto(message.FirstName, message.LastName, message.EmailAddress, message.AddressLine, message.Country, message.State, message.ZipCode);
             var paymentDto = new PaymentDto(message.CardName, message.CardNumber, message.Expiration, message.CVV, message.PaymentMethod);
             var orderId = Guid.NewGuid();
 

@@ -37,7 +37,7 @@ namespace Ordering.Infrastructure.Data.Configurations
                     .HasMaxLength(50)
                     .IsRequired();
 
-                    addresBuilder.Property(a => a.EmailAddres)
+                    addresBuilder.Property(a => a.EmailAddress)
                     .HasMaxLength(50)
                     .IsRequired();
 
@@ -68,7 +68,7 @@ namespace Ordering.Infrastructure.Data.Configurations
                     .HasMaxLength(50)
                     .IsRequired();
 
-                    addresBuilder.Property(a => a.EmailAddres)
+                    addresBuilder.Property(a => a.EmailAddress)
                     .HasMaxLength(50)
                     .IsRequired();
 

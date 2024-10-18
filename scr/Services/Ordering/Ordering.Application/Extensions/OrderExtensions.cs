@@ -12,7 +12,7 @@
                 ShippingAddress: new AddressDto(
                     order.ShippingAddress.FirstName,
                     order.ShippingAddress.LastName,
-                    order.ShippingAddress.EmailAddres,
+                    order.ShippingAddress.EmailAddress,
                     order.ShippingAddress.AddressLine,
                     order.ShippingAddress.Country,
                     order.ShippingAddress.State,
@@ -20,7 +20,7 @@
                 BullingAddress: new AddressDto(
                     order.BillingAddress.FirstName,
                     order.BillingAddress.LastName,
-                    order.BillingAddress.EmailAddres,
+                    order.BillingAddress.EmailAddress,
                     order.BillingAddress.AddressLine,
                     order.BillingAddress.Country,
                     order.BillingAddress.State,
@@ -56,7 +56,7 @@
                 ShippingAddress: new AddressDto(
                     order.ShippingAddress.FirstName,
                     order.ShippingAddress.LastName,
-                    order.ShippingAddress.EmailAddres,
+                    order.ShippingAddress.EmailAddress,
                     order.ShippingAddress.AddressLine,
                     order.ShippingAddress.Country,
                     order.ShippingAddress.State,
@@ -64,7 +64,7 @@
                 BullingAddress: new AddressDto(
                     order.BillingAddress.FirstName,
                     order.BillingAddress.LastName,
-                    order.BillingAddress.EmailAddres,
+                    order.BillingAddress.EmailAddress,
                     order.BillingAddress.AddressLine,
                     order.BillingAddress.Country,
                     order.BillingAddress.State,
