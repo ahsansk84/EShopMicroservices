@@ -19,7 +19,7 @@
     public record AddressModel(
         string FirstName,
         string LastName,
-        string EmailAddres,
+        string EmailAddress,
         string AddressLine,
         string Country,
         string State,
