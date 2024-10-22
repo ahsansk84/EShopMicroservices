@@ -1,16 +1,16 @@
-version: '3.4'
+version: '3.9'
 
 services:
   catalogdb:
-    image: postgres
+    image: postgres:latest
     build:
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
   basketdb:
-    image: postgres
+    image: postgres:latest
     build:
       dockerfile: Services/Basket/Basket.API/Dockerfile
   distributedcache:
-    image: redis
+    image: redis:latest
     build:
       dockerfile: Services/Basket/Basket.API/Dockerfile
   orderdb:
