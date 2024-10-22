@@ -10,7 +10,7 @@ services:
     build:
       dockerfile: Services/Basket/Basket.API/Dockerfile
   distributedcache:
-    image: redis
+    image: redis:latest
     build:
       dockerfile: Services/Basket/Basket.API/Dockerfile
   orderdb:
